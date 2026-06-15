@@ -1,0 +1,62 @@
+#命令学习
+## pwd
+作用:显示当前目录
+示例:
+```bash
+pwd
+```
+
+## mkdir
+作用:创建目录
+示例:
+```bash
+mkdir linux-text
+```
+
+## ls
+作用:查看当前目录有什么
+示例:
+```bash
+ls
+```
+
+## cd
+作用:进入目录
+示例:
+```bash
+cd linux-test
+```
+
+## touch
+作用:创建文件
+示例:
+```bash
+touch mytest1.txt
+```
+
+## cp
+作用:复制文件
+示例:
+```bash
+cp mytest1.txt mytest2.txt
+```
+
+## mv
+作用:重命名文件
+示例:
+```bash
+mv mytest1.txt mytest3.txt
+```
+
+## rm
+作用:删除文件
+示例:
+```bash
+rm mytest1.txt
+```
+
+
+
+
+
+
