@@ -55,6 +55,7 @@ mv mytest1.txt mytest3.txt
 rm mytest1.txt
 ```
 
+此外在Linux内下载了git并且连接上了我的GitHub仓库，但出现了本系统的剪切板不能正常复制进入虚拟机内，暂时没有解决.....
 
 
 
