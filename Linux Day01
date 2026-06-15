@@ -1,63 +1,137 @@
-#命令学习
-## pwd
-作用:显示当前目录
-示例:
-```bash
+#Linux 基础环境搭建
+完成 VMware Workstation Pro 中 Ubuntu 26.04 虚拟机的安装与启动。
+
+学习内容：
+- VMware 虚拟机的基本使用
+- Ubuntu 系统的启动与登录
+- Linux 终端（Terminal）的使用
+---
+
+
+##1. Linux 常用命令练习
+
 pwd
-```
+作用：查看当前所在目录
+示例：
+pwd
+---
 
-## mkdir
-作用:创建目录
-示例:
-```bash
-mkdir linux-text
-```
-
-## ls
-作用:查看当前目录有什么
-示例:
-```bash
 ls
-```
+作用：查看目录中的文件和文件夹
+示例：
+ls
+---
 
-## cd
-作用:进入目录
-示例:
-```bash
+cd
+作用：切换目录
+示例：
 cd linux-test
-```
+---
 
-## touch
-作用:创建文件
-示例:
-```bash
+touch
+作用：创建文件
+示例：
 touch mytest1.txt
-```
+---
 
-## cp
-作用:复制文件
-示例:
-```bash
+cp
+作用：复制文件
+示例：
 cp mytest1.txt mytest2.txt
-```
+---
 
-## mv
-作用:重命名文件
-示例:
-```bash
+mv
+作用：移动或重命名文件
+示例：
 mv mytest1.txt mytest3.txt
-```
+---
 
-## rm
-作用:删除文件
-示例:
-```bash
+rm
+作用：删除文件
+示例：
 rm mytest1.txt
-```
-
-此外在Linux内下载了git并且连接上了我的GitHub仓库，但出现了本系统的剪切板不能正常复制进入虚拟机内，暂时没有解决.....
+---
 
 
+##2. Git 安装与配置
+最初执行：
+git --version
+系统提示未安装 Git。
+随后执行：
+sudo apt update
+sudo apt install git
+成功安装 Git。
+验证：
+git --version
+输出：
+git version 2.53.0
+---
+
+3. Git 用户信息配置
+配置用户名：
+git config --global user.name "Cai-source"
+配置邮箱：
+git config --global user.email "1786578736@qq.com"
+验证配置：
+git config --list
+成功显示用户名与邮箱。
+---
+
+4. GitHub 仓库连接
+成功连接 GitHub 仓库：
+https://github.com/Cai-sorce/linux-notes.git
+完成：
+- 本地仓库初始化
+- Git 用户配置
+- GitHub 仓库关联
+- 学习笔记上传
+第一次实现了：
+Linux → Git → GitHub
+完整工作流。
+---
 
 
 
+
+###产生问题
+1. 网络连接问题排查
+学习过程中发现：
+- Ubuntu 可以访问网络
+- GitHub 访问异常
+- ping github.com 返回了异常的 198.18.x.x 地址
+经过排查发现：
+- 原因是主机 VPN 造成的 DNS 劫持或代理影响
+- 关闭 VPN 后恢复正常
+学习收获：
+- 学会使用 ping 检查网络连接
+- 学会判断 DNS 解析是否异常
+- 初步了解代理和 VPN 对虚拟机网络的影响
+---
+
+2. VMware Tools 问题排查
+遇到问题：
+- Windows 与 Ubuntu 之间无法共享剪贴板
+- 无法直接复制粘贴内容
+排查过程：
+(1). 检查 VMware 设置中的：
+   - Enable copy and paste
+   - Enable drag and drop
+(2). 检查 VMware Tools 状态
+which vmware-toolbox-cmd
+vmware-toolbox-cmd -v
+(3). 检查 open-vm-tools 服务
+systemctl status open-vm-tools
+确认：
+- open-vm-tools 已安装
+- open-vm-tools-desktop 已安装
+- 服务运行正常
+目前问题仍未完全解决，后续继续排查。
+---
+掌握了：
+- Linux 基础命令
+- Git 安装与配置
+- GitHub 仓库连接
+- 网络问题排查思路
+- VMware Tools 基础知识
+开始具备使用 Linux 进行后续网络安全学习的基础环境。
+---
