@@ -1,0 +1,59 @@
+#今日学习记录均在Linux内进行
+（昨日遗留问题剪切板无法复制在Windows系统重启后以解决）
+##1. Linux 常用命令学习
+(1) git status
+作用：查看仓库状态
+---
+
+(2) git remote -v
+作用：查看远程仓库地址
+---
+
+(3) git remote set-url origin 新地址
+作用：修改仓库地址
+---
+
+(4）nano 文件
+作用：终端编辑文件
+---
+
+（5） find -name "文件名"
+作用：在目录树中查找文件或目录，搜索功能
+特别的： 
+find -name "*.txt"
+*  表示任意字符，即所有的.txt文件都会被匹配
+
+find . -name "xxx" 等价于 fine -name "xxx"
+.  表示从当前目录开始找
+
+find ~ -name "xxx"
+表示从家目录开始寻找
+
+find / -name "xxx"
+表示从根目录开始寻找（可能需要管理员权限）
+
+find -type d -name "xxx"
+表示只寻找目录（directory)
+
+find -type f -name "xxx"
+表示只寻找普通文件（file)
+
+（6）git push
+作用：上传本地资源至Github
+
+（7）git pull
+作用：下载Github资源至本地
+
+###问题发现
+1.执行touch Linux Day02发现创建了两个文件，Linux和Day02。
+用""分割得以解决    示例：touch "Linux Day02"
+2.两个文件A与B，执行  mv A B  是将A覆盖B。
+文件A与文件夹（或根目录）B，执行 mv A B 是将A移动至B下。
+文件A与文件夹（或根目录）B，执行 mv A B/C 是将A移动至B下，并且将A重命名为C（不存在C)。
+3.执行cd linux-test，报错没有该文件或目录，但桌面上有该文件。
+后执行pwd 发现我的位置在根目录，要寻找的文件在 桌面 文件夹下。
+4.cd 不能进入文件
+5.rm 只能删除文件，不能删除文件夹或目录。
+若要删除目录，则执行 rm -r 目录名。
+（-r ，recursive，递归删除，即全部删除）
+
