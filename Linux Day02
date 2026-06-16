@@ -44,6 +44,17 @@ find -type f -name "xxx"
 （7）git pull
 作用：下载Github资源至本地
 
+(8)ssh-keygen -t ed25519 -C "我的邮箱地址"
+作用：生成ssh公钥密钥
+
+（9）git add .
+    git commit -m "XXX"
+    作用：提交本地名为 XXX 的文件至云端
+    
+（10） git add .
+      git commit -m "delete XXX"
+作用：删除云端名为 XXX 的文件
+
 ###问题发现
 1.执行touch Linux Day02发现创建了两个文件，Linux和Day02。
 用""分割得以解决    示例：touch "Linux Day02"
@@ -56,4 +67,4 @@ find -type f -name "xxx"
 5.rm 只能删除文件，不能删除文件夹或目录。
 若要删除目录，则执行 rm -r 目录名。
 （-r ，recursive，递归删除，即全部删除）
-
+6.在使用 git push的时候发现Github已禁用密码认证，随后在Linux终端机配置了SSH密钥，并且在网页端填写后，免除密码认证环节。详情见##（8）。
