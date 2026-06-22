@@ -1,0 +1,17 @@
+{
+    "app2.log": {
+        "error": 1,
+        "warning": 1,
+        "info": 0
+    },
+    "app3.log": {
+        "error": 1,
+        "warning": 1,
+        "info": 0
+    },
+    "app1.log": {
+        "error": 2,
+        "warning": 1,
+        "info": 0
+    }
+}
