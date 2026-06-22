@@ -1,0 +1,5 @@
+LOG ANALYSIS REPROT
+================
+error:4
+warning:3
+info:3
