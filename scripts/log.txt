@@ -1,0 +1,12 @@
+text = """
+error: failed to connect to database
+warning: low disk space
+info: user login success
+error: timeout while connecting
+info: system started
+warning: high memory usage
+error: failed to load module
+info: backup completed
+error: database connection lost
+warning: cpu temperature high
+"""
