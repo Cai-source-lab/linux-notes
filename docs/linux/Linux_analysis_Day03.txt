@@ -1,0 +1,86 @@
+#Linux指令
+1.进程状态（服务有没有在跑）
+ps（静态快照）
+ps aux
+ps aux | grep nginx
+解释：
+ps aux：所有进程
+grep nginx：过滤 nginx
+真实场景：
+“服务挂了吗？” → 先 ps 看进程还在不在
+
+2.top（动态监控）
+top
+会看到：
+CPU占用
+内存占用
+哪个进程最耗资源
+退出：q
+判断问题：
+CPU 100% → 计算压力/死循环
+内存爆 → 内存泄漏
+
+3.磁盘状态（非常常见故障）
+df -h
+含义：
+disk free
+重点看：
+Use%（使用率）
+典型问题：
+100% → 系统直接异常（写不了日志/启动失败）
+
+4.日志（排错核心）
+cat（直接看）
+cat file.log
+适合小文件
+
+tail（看最新）
+tail file.log
+
+实时看日志
+tail -f app.log
+
+5.grep（筛选关键字）
+grep error app.log
+含义：
+找 error 行
+
+重要组合*
+tail -f app.log | grep error
+效果：
+实时只看错误
+
+##重要判断逻辑
+/var/log：日志目录
+/etc：配置目录
+/home：用户目录
+/proc：进程信息
+
+1.看机器状态
+top
+df -h
+free -h
+CPU高 → 程序问题
+内存高 → 泄漏/压力
+磁盘满 → 系统级故障
+
+2.找进程
+ps aux | grep nginx
+
+3.*服务在不在
+ps aux | grep app
+ *端口在不在
+netstat -an | grep 8080
+ *本机访问测试
+curl http://localhost:8080
+
+总结
+现象*             结论*
+
+进程没了	服务挂了
+进程有但端口没	启动失败
+端口有但curl失败	应用异常
+curl成功	外部网络问题
+
+问题是在进程 / 端口 / 应用层 / 网络层
+
